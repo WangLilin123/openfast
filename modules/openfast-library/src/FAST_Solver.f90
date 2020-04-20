@@ -4898,13 +4898,6 @@ SUBROUTINE SolveOption1(this_time, this_state, calcJacobian, p_FAST, ED, BD, HD,
          
    END IF
 
-      ! SoilDyn
-   IF ( p_FAST%CompSoil == Module_SlD ) THEN
-      CALL SlD_CalcOutput( this_time, SlD%Input(1), SlD%p, SlD%x(this_state), SlD%xd(this_state), SlD%z(this_state), &
-                            SlD%OtherSt(this_state), SlD%y, SlD%m, ErrStat2, ErrMsg2 )
-         CALL SetErrStat( ErrStat2, ErrMsg2, ErrStat, ErrMsg, RoutineName )
-   END IF
-
    IF (ErrStat >= AbortErrLev) RETURN      
    
    IF ( p_FAST%CompSub /= Module_None .OR. (p_FAST%CompElast == Module_BD .and. BD_Solve_Option1) .OR. p_FAST%CompMooring == Module_Orca ) THEN !.OR. p_FAST%CompHydro == Module_HD ) THEN

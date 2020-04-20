@@ -86,10 +86,10 @@ inputs and outputs are neither set nor used.
 % SolveOption2a_Inp2BD
    \State $\mathit{y\_ED} \gets \Call{ED\_CalcOutput}{\mathit{p\_ED},\mathit{u\_ED},\mathit{x\_ED},\mathit{xd\_ED},\mathit{z\_ED}}$
    \State $\mathit{u\_BD}  \gets \Call{TransferOutputsToInputs}{\mathit{y\_ED}}$
-   \State $\mathit{y\_BD} \gets \Call{BD\_CalcOutput}{\mathit{p\_BD},\mathit{u\_BD},\mathit{x\_BD},\mathit{xd\_BD},\mathit{z\_BD}}$
 
 \State
 % SolveOption2b_Inp2IfW
+   \State $\mathit{y\_BD} \gets \Call{BD\_CalcOutput}{\mathit{p\_BD},\mathit{u\_BD},\mathit{x\_BD},\mathit{xd\_BD},\mathit{z\_BD}}$
    \State $\mathit{u\_AD}($no IfW$)  \gets \Call{TransferOutputsToInputs}{\mathit{y\_ED}}$
    \State $\mathit{u\_IfW} \gets \Call{TransferOutputsToInputs}{\mathit{y\_ED} at \mathit{u\_AD} nodes}$
 
@@ -170,7 +170,6 @@ The other input-output relationships for these modules are solved using Solve Op
    \State $\mathit{y\_FEAM}    \gets \Call{CalcOutput}{\mathit{p\_FEAM},\mathit{u\_FEAM},\mathit{x\_FEAM},\mathit{xd\_FEAM},\mathit{z\_FEAM}}$
    \State $\mathit{y\_IceF}    \gets \Call{CalcOutput}{\mathit{p\_IceF},\mathit{u\_IceF},\mathit{x\_IceF},\mathit{xd\_IceF},\mathit{z\_IceF}}$
    \State $\mathit{y\_IceD(:)} \gets \Call{CalcOutput}{\mathit{p\_IceD(:)},\mathit{u\_IceD(:)},\mathit{x\_IceD(:)},\mathit{xd\_IceD(:)},\mathit{z\_IceD(:)}}$
-   \State $\mathit{y\_SlD}     \gets \Call{CalcOutput}{\mathit{p\_SlD},\mathit{u\_SlD},\mathit{x\_SlD},\mathit{xd\_SlD},\mathit{z\_SlD}}$ 
    \State
    \State\Comment{Form $u$ vector using loads and accelerations from $\mathit{u\_HD}$, $\mathit{u\_BD}$ $\mathit{u\_SD}$, and platform reference input from $\mathit{u\_ED}$}
    \State
